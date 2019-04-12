@@ -1,0 +1,30 @@
+
+
+{#想要覆盖admin首页需要继承flask_admin下的template/master.html#}
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    <div class="jumbotron">
+       <h1>您好， 欢迎进入药品库存管理系统</h1>
+        <p>您可使用如下功能:
+            <li>1、管理账户信息</li>
+            <li>2、管理账户权限</li>
+            <li>3、管理药品信息</li>
+            <li>4、管理药品分类</li>
+        </p>
+
+
+    </div>
+{% endblock %}
+
+{% block tail %}
+    <div class="navbar-fixed-bottom">
+        <div class="container">
+            <div class="row text-center">
+                <hr>
+                <p>&copy;Guleii</p>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

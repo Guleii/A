@@ -10,10 +10,21 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Log in')
 
 
-# 用户注册
+# 添加用户
 class RegisterForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(1, 30)])
     username = StringField('Username', validators=[DataRequired(), Length(1, 30)])
-    password = PasswordField('Password', validators=[DataRequired, Length(8, 128)])
-    password2 = PasswordField('Confirm password', validators=[DataRequired])
+    password = PasswordField('Password', validators=[DataRequired])
+    password2 = PasswordField('Confirm password', validators=[DataRequired, EqualTo(password, '两次密码输入应相同')])
     submit = SubmitField('submit')
+
+
+# 查询用户
+class SelectUser(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(1, 30)])
+    id = StringField('Id', validators=[DataRequired(), Length(1, 30)])
+
+
+# 添加药品
+class CreateDrug(FlaskForm):
+    pass

@@ -1,0 +1,63 @@
+{# 后台基模板 #}
+{% extends 'Bootstrap/base.html' %}
+
+    <div class="container-fluid">
+        <div class="row">
+{% block navbar %}
+        {# 左边栏 #}
+            <div class="col-md-2" role="navigation">
+
+                <ul id="main-nav" class="nav nav-tabs nav-stacked">
+
+                    <li >
+                       <div class="well well-sm">后台操作栏</div>
+                        <hr>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('home') }}"><span class="glyphicon glyphicon-home active"> 主页</span></a>
+
+                    </li>
+                    <li>
+                        <a href="{{ url_for('drug_search') }}"><span class="glyphicon glyphicon-search"> 药品搜索</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('drug_manager') }}"><span class="glyphicon glyphicon-list"> 药品管理</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('admin_manager') }}"><span class="glyphicon glyphicon-user"> 账号管理</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-off"> 退出登录</span></a>
+                    </li>
+
+                </ul>
+            </div>
+
+        {# 页脚 #}
+                    <div class="footer navbar-fixed-bottom">
+                            <div class="text-center">
+                                <hr>
+                                <p>&copy;2019 Guleii</p>
+                            </div>
+                    </div>
+
+
+{% endblock %}
+        {# 右侧主页面 #}
+            <div class="col-md-10">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+
+
+
+    </div>
+{% block script %}
+    <link
+{% endblock %}
+
+
+
